@@ -10,4 +10,10 @@
         android:onClick="onDrawImage"
         android:text="三种方式绘制图片" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onAudioDemo"
+        android:text="音频录制" />
+
 </LinearLayout>

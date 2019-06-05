@@ -1,10 +1,11 @@
 package com.yelj.mediademon;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.yelj.mediademon.audio.AudioRecordActivity;
 import com.yelj.mediademon.drawimage.DrawImageActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +18,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void onDrawImage(View view) {
         startActivity(DrawImageActivity.class);
+    }
+
+    public void onAudioDemo(View view) {
+        startActivity(AudioRecordActivity.class);
     }
 
     private void startActivity(Class cls) {

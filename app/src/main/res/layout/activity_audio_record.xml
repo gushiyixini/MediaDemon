@@ -7,6 +7,18 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="startRecord"
+        android:onClick="onRecord"
         android:text="开始录音" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onConvert"
+        android:text="pcm转wav" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="play"
+        android:text="开始播放" />
 </LinearLayout>
