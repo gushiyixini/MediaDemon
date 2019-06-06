@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.yelj.mediademon.audio.AudioRecordActivity;
+import com.yelj.mediademon.camera.SurfaceViewActivity;
+import com.yelj.mediademon.camera.TextureViewActivity;
 import com.yelj.mediademon.drawimage.DrawImageActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +24,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void onAudioDemo(View view) {
         startActivity(AudioRecordActivity.class);
+    }
+
+    public void onPreviewBySurfaceView(View view) {
+        startActivity(SurfaceViewActivity.class);
+    }
+
+    public void onPreviewByTextureView(View view) {
+        startActivity(TextureViewActivity.class);
     }
 
     private void startActivity(Class cls) {
