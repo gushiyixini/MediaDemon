@@ -22,6 +22,8 @@ import java.io.IOException;
  */
 public class TextureViewActivity extends AppCompatActivity {
 
+    private Camera camera;
+
     /**
      * 需要申请的运行时权限
      */
@@ -38,7 +40,7 @@ public class TextureViewActivity extends AppCompatActivity {
         TextureView textureView = findViewById(R.id.texture_view);
 
         //打开摄像头并旋转90度
-        final Camera camera = Camera.open();
+        camera = Camera.open();
         camera.setDisplayOrientation(90);
 
         //Android常用的YUV格式有两种，一个是NV21，一个是YV12，Android一般默认是NV21
@@ -74,7 +76,13 @@ public class TextureViewActivity extends AppCompatActivity {
 
             @Override
             public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
-                camera.release();
+                if (null != camera) {
+                    camera.setPreviewCallback(null);
+                    camera.stopPreview();
+                    camera.lock();
+                    camera.release();
+                    camera = null;
+                }
                 return false;
             }
 
